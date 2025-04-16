@@ -1,0 +1,31 @@
+{
+  "name": "simple-apollo-v4-graphql",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev:js": "node dist/index.js",
+    "dev:ts": "node --loader ts-node/esm src/index.ts",
+    "nodemon": "nodemon --watch src --ext ts --exec \"tsc --noemit && node --import=./src/dev/register.js src/index.ts\"",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Hairyblue",
+  "license": "ISC",
+  "description": "A simple journey to apollo graphql",
+  "type": "module",
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.12.0",
+    "graphql": "^16.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
