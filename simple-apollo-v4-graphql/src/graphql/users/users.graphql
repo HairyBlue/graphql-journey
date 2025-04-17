@@ -29,8 +29,12 @@ type Testimonial {
 }
 
 
-type Query {
+type query_root {
    dummyBatchUser: [DummybatchUser],
    searchUser(where: search_user!): [DummybatchUser!]!
    testimonial: [Testimonial]
+}
+
+schema {
+   query: query_root
 }

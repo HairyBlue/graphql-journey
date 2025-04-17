@@ -18,11 +18,15 @@ function dummyBatchUser() {
    return db.dummyBatchUser;
 }
 
+function testimonial() {
+   return db.testimonial;
+}
 
 const resolvers = {
-   Query: {
+   query_root: {
      searchUser,
      dummyBatchUser,
+     testimonial
    },
  };
  
