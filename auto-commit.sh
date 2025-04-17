@@ -2,11 +2,10 @@
 set -e
 current_dir="$(pwd)"
 
+help="$1"
 semantic=$(echo "$1" | cut -d= -f2)
 commitMessage="$2"
-
-shift 2
-specificFile="$@"
+specificFile=""
 
 function print_error() {
     printf "\033[1;31m%s\033[0m" "$1"
@@ -100,8 +99,16 @@ function commit() {
 
 }
 
+if [ "$#" -eq 0 ]; then
+   exitf "Do --help"
+fi
 
-if [ "$1" == "--help" ]; then
+if [ "$#" -ge 3 ]; then
+   shift 2
+   specificFile="$@"
+fi
+
+if [ "$help" == "--help" ]; then
   echo "Usage:"
   echo "  ./auto-commit.sh --semantic=<type> \"Your commit message here\""
   echo ""
@@ -120,6 +127,9 @@ if [ "$1" == "--help" ]; then
   echo ""
   echo "Example:"
   echo "  ./auto-commit.sh --semantic=feat \"add dark mode toggle\""
+  echo ""
+  echo "Example with specific file/s:"
+  echo "  ./auto-commit.sh --semantic=feat \"add dark mode toggle\" \"file1.ts\" \"file2.ts\""
   exit 0
 fi
 
