@@ -5,17 +5,14 @@ import { loadFilesSync } from "@graphql-tools/load-files";
 
 import users from "./users/users.resolvers.js";
 
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 
 const typesArray = loadFilesSync(path.join(__dirname,  '**/*.graphql'))
 const typeDefs = mergeTypeDefs(typesArray);
 
-
 const resolversArray = [users];
-const resolvers = mergeResolvers(resolversArray);
+const resolvers: any = mergeResolvers(resolversArray);
 
 export {
    typeDefs,

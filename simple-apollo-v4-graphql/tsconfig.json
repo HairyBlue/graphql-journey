@@ -9,14 +9,12 @@
      "esModuleInterop": true,
      "types": ["node"],
      "strict": true,
-   //    "noEmit": false,
-   //   "allowImportingTsExtensions": true,
       "typeRoots": ["node_modules/@types"],
       "sourceMap": true
    },
    "ts-node": {
       "esm": true
    },
-   "include": ["src"],
+   "include": ["src/**/*"],
    "exclude": ["node_modules", "dist", "src/dev/register.js"],
  }

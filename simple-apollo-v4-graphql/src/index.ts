@@ -5,7 +5,7 @@ import  { typeDefs, resolvers }  from "./graphql/index.js"
 const server = new ApolloServer<{}>({
    typeDefs,
    resolvers,
- });
+});
  
 const { url } = await startStandaloneServer(server, {
    listen: { port: 4000 },
@@ -23,3 +23,7 @@ process
    console.error(exception, 'Fatal Uncaught exception: ');
    // process.exit(1);
    });
+
+export {
+   server
+}
