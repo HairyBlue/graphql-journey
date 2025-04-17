@@ -1,0 +1,36 @@
+"Male and Female. No optional kay shit"
+enum Gender {M, F}
+
+"UUID V4 string"
+scalar uuid
+
+"CCIS 4th Year 2024-2025"
+type DummybatchUser {
+   id: ID! # entarnal communication only
+   uuid: String!
+   name: String!
+   gender: Gender!
+   profile: String
+}
+
+input uuid_comparison {
+   _eq: uuid,
+   _in: [uuid!]
+   _neq: uuid
+}
+
+input search_user {
+   uuid: uuid_comparison
+}
+
+type Testimonial {
+   uuid: String!
+   userSaid: String
+}
+
+
+type Query {
+   dummyBatchUser: [DummybatchUser],
+   searchUser(where: search_user!): [DummybatchUser!]!
+   testimonial: [Testimonial]
+}
