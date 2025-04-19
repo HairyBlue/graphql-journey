@@ -17,5 +17,5 @@ generates:
           input: string | number
           output: string | number
       immutableTypes: true
-      
+
 ignoreNoDocuments: true
