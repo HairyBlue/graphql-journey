@@ -1,6 +1,6 @@
 import { beforeAll, describe, it, expect} from 'vitest'
-import { server } from "../src/index.js"
-import * as db from "../src/db.js"
+import { server } from "../../index.js"
+import * as db from "../../db.js"
 
 describe("Test graphql on user data", () => {
    it("Should get dummybatch user", async () => {
