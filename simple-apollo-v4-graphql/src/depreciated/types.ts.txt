@@ -1,0 +1,35 @@
+type Maybe<T> = T | null;
+
+type User = {
+   id: number
+   uuid: string
+   name: string
+   gender: string
+   profile?: Maybe<string>
+};
+
+type PublicUser = Omit<User, "id">;
+
+type PublicUsers = PublicUser[];
+
+type SearchUserArg = {
+   where: {
+      uuid: {
+         _eq?: string
+         _in?: string[]
+         _neq?: string
+      }
+   }
+}
+
+type ResolverFunc<TResult, TParent, TArgs, TContext> = (root: TParent, args: TArgs, context: TContext) => Promise<TResult> | TResult; 
+type Resolver<TResult, TParent = {}, TArgs = {}, TContext = {}> =  ResolverFunc<TResult, TParent, TArgs, TContext>
+
+type QueryResolver = {
+   user?: Resolver<PublicUsers, any, SearchUserArg>
+   users?: Resolver<PublicUsers>
+}
+
+type Resolvers = {
+   Query: QueryResolver
+}

@@ -37,10 +37,10 @@ const typeDefs = `#graphql
    }
 `
 
-function searchUser(_: any, arg: DummyBatch.SearchUserArg) {
+function searchUser(_: any, arg: any) {
    const { _eq, _in } = arg?.where?.uuid;
 
-   let out: DummyBatch.User = [];
+   let out: any = [];
 
    if (_eq) {
       const find = db.dummyBatchUser.find(val => val.uuid == _eq);

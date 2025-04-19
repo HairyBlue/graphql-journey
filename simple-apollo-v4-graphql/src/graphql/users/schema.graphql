@@ -1,0 +1,46 @@
+enum Gender {
+  M
+  F
+}
+
+scalar uuid
+
+type User {
+  id: Int!
+  uuid: uuid!
+  name: String!
+  gender: Gender!
+  profile: String
+}
+
+type PublicUser {
+  uuid: uuid!
+  name: String!
+  gender: Gender!
+  profile: String
+}
+
+input SearchUserInput {
+  uuid: UuidFilter
+}
+
+input UuidFilter {
+  _eq: uuid
+  _in: [uuid!]
+  _neq: uuid
+}
+
+type Testimonial {
+  uuid: uuid!
+  testimonial: String!
+}
+
+type QueryRoot {
+  user(where: SearchUserInput!): [PublicUser!]!
+  users: [PublicUser!]!
+  testimonial: [Testimonial!]!
+}
+
+schema {
+  query: QueryRoot
+}

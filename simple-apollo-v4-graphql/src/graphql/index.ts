@@ -3,7 +3,7 @@ import * as path from "path";
 import { fileURLToPath } from 'url';
 import { loadFilesSync } from "@graphql-tools/load-files";
 
-import users from "./users/users.resolvers.js";
+import users from "./users/resolvers.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

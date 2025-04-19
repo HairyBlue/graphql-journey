@@ -4,10 +4,11 @@
   "main": "dist/index.js",
   "scripts": {
     "nodemon": "nodemon --watch src --ext ts --exec tsx src/index.ts",
-    "dev": "npm run build && node dist/index.js",
+    "build:start": "npm run build && node dist/index.js",
     "build": "rm -rf dist && tsc && npm run copy-graphql",
     "copy-graphql": "copyfiles -u 1 src/**/*.graphql dist/",
     "start": "cd dist && node index.js",
+    "generate": "graphql-codegen",
     "test": "vitest"
   },
   "keywords": [],
@@ -25,6 +26,10 @@
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.5",
+    "@graphql-codegen/schema-ast": "^4.1.0",
+    "@graphql-codegen/typescript": "^4.1.6",
+    "@graphql-codegen/typescript-resolvers": "^4.5.0",
     "@types/glob": "^8.1.0",
     "@types/node": "^22.14.1",
     "copyfiles": "^2.4.1",

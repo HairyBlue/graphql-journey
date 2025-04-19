@@ -2,7 +2,7 @@
    "compilerOptions": {
      "rootDirs": ["src"],
      "outDir": "dist",
-     "lib": ["es2020"],
+     "lib": ["es2020", "DOM", "DOM.Iterable"],
      "target": "es2020",
      "module": "esnext",
      "moduleResolution": "node",
@@ -10,7 +10,8 @@
      "types": ["node"],
      "strict": true,
       "typeRoots": ["node_modules/@types"],
-      "sourceMap": true
+      "sourceMap": true,
+      "skipLibCheck": true
    },
    "ts-node": {
       "esm": true
