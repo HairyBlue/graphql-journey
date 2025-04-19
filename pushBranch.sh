@@ -5,7 +5,6 @@ source .env
 branch="$1"
 
 if [ -n "$branch" ]; then
-
    git push origin "$branch" | (
       if [ -n "$WEBHOOK_URL" ]; then
          if [ -f "commit.txt" ]; then
@@ -21,7 +20,6 @@ if [ -n "$branch" ]; then
          exit 0
       fi
    )
-
+else
+   echo "Usage <master|feature/*|test>"
 fi
-
-
