@@ -1,4 +1,4 @@
-import * as db from "../../db.js"
+import * as db from "../../mock-data.js"
 
 function searchUser(_: any, arg: DummyBatch.SearchUserArg) {
    const { _eq, _in } = arg?.where?.uuid;

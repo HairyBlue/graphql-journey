@@ -1,6 +1,6 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
-import * as db from "./db.js";
+import * as db from "./mock-data.js";
 
 const typeDefs = `#graphql
    enum Gender {M, F}
