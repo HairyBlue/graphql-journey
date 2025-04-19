@@ -19,3 +19,4 @@ generates:
       immutableTypes: true
       
 ignoreNoDocuments: true
+overwrite: true

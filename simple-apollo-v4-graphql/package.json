@@ -8,7 +8,7 @@
     "build": "rm -rf dist && tsc && npm run copy-graphql",
     "copy-graphql": "copyfiles -u 1 src/**/*.graphql dist/",
     "start": "cd dist && node index.js",
-    "generate": "graphql-codegen",
+    "generate": "rm src/schema.generated.graphql src/resolvers.generated.ts && graphql-codegen",
     "test": "vitest"
   },
   "keywords": [],

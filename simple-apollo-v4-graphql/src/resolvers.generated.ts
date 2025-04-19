@@ -55,7 +55,6 @@ export type Testimonial = {
 export type User = {
   readonly __typename?: 'User';
   readonly gender: Gender;
-  readonly id: Scalars['Int']['output'];
   readonly name: Scalars['String']['output'];
   readonly profile?: Maybe<Scalars['String']['output']>;
   readonly uuid: Scalars['uuid']['output'];
@@ -140,7 +139,6 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']['output']>;
   Gender: Gender;
-  Int: ResolverTypeWrapper<Scalars['Int']['output']>;
   PublicUser: ResolverTypeWrapper<PublicUser>;
   QueryRoot: ResolverTypeWrapper<{}>;
   SearchUserInput: SearchUserInput;
@@ -154,7 +152,6 @@ export type ResolversTypes = {
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
   Boolean: Scalars['Boolean']['output'];
-  Int: Scalars['Int']['output'];
   PublicUser: PublicUser;
   QueryRoot: {};
   SearchUserInput: SearchUserInput;
@@ -187,7 +184,6 @@ export type TestimonialResolvers<ContextType = any, ParentType extends Resolvers
 
 export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
   gender?: Resolver<ResolversTypes['Gender'], ParentType, ContextType>;
-  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   profile?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   uuid?: Resolver<ResolversTypes['uuid'], ParentType, ContextType>;

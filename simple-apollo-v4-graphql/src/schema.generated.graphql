@@ -31,7 +31,6 @@ type Testimonial {
 
 type User {
   gender: Gender!
-  id: Int!
   name: String!
   profile: String
   uuid: uuid!
