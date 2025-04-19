@@ -2,7 +2,7 @@ import * as db from "../../mock-data.js";
 import { PublicUser, Resolvers } from "../../resolvers.generated.js";
 
 const resolvers: Resolvers = {
-  QueryRoot: {
+  Query: {
     user: (_: any, { where: { uuid } }) => {
       const _eq = uuid?._eq;
 

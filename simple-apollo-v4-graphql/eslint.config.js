@@ -18,6 +18,7 @@ export default defineConfig([
     "dist",
     "node_modules",
     "./src/resolvers.generated.{js,mjs,cjs,ts}",
+    "coverage"
   ]),
   {
     rules: {

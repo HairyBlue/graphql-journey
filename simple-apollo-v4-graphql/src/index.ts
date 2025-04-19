@@ -4,7 +4,7 @@ import { typeDefs, resolvers } from "./graphql/index.js";
 
 const server = new ApolloServer<{}>({
   typeDefs,
-  resolvers,
+  resolvers: resolvers as any,
 });
 
 const { url } = await startStandaloneServer(server, {

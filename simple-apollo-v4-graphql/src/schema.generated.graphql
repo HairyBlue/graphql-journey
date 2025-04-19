@@ -1,5 +1,5 @@
 schema {
-  query: QueryRoot
+  query: Query
 }
 
 enum Gender {
@@ -14,7 +14,7 @@ type PublicUser {
   uuid: uuid!
 }
 
-type QueryRoot {
+type Query {
   testimonial: [Testimonial!]!
   user(where: SearchUserInput!): [PublicUser!]!
   users: [PublicUser!]!

@@ -34,12 +34,12 @@ type Testimonial {
   testimonial: String!
 }
 
-type QueryRoot {
+type Query {
   user(where: SearchUserInput!): [PublicUser!]!
   users: [PublicUser!]!
   testimonial: [Testimonial!]!
 }
 
 schema {
-  query: QueryRoot
+  query: Query
 }
