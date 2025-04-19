@@ -6,9 +6,8 @@ describe("Test graphql on user data", () => {
    it("Should get dummybatch user", async () => {
       const response = await server.executeOperation({
          query: `query Dummybatch {
-            dummyBatchUser {
+            users {
                name,
-               id,
                uuid,
                gender,
                profile
@@ -19,9 +18,10 @@ describe("Test graphql on user data", () => {
 
       if (response.body.kind === "single") {
          const data: any = response.body.singleResult.data;
-         const dataStr = JSON.stringify(data.dummyBatchUser);
-
-         expect(dataStr).toEqual(JSON.stringify(db.dummyBatchUser))
+         const dataStr = JSON.stringify(data.users);
+         const fromDb = JSON.stringify(db.dummyBatchUser);
+         
+         expect(dataStr).toEqual(fromDb)
       } else {
          console.log(response.body.kind);
       }

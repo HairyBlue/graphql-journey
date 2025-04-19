@@ -6,7 +6,7 @@ enum Gender {
 scalar uuid
 
 type User {
-  id: Int!
+  id: Int
   uuid: uuid!
   name: String!
   gender: Gender!

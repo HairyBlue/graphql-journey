@@ -10,7 +10,7 @@ const resolvers: Resolvers = {
             let out: PublicUser[] = [];
 
             if (_eq) {
-               const find: PublicUser | undefined = db.dummyBatchUser.filter(val => val.id).find(val => val.uuid == _eq) as PublicUser;
+               const find: PublicUser | undefined = db.dummyBatchUser.find(val => val.uuid == _eq) as PublicUser;
                if (find)
                   out.push(find);
             }
@@ -18,7 +18,7 @@ const resolvers: Resolvers = {
             return out;
       },
       users: () => {
-         return db.dummyBatchUser.filter(val => val.id) as PublicUser[];
+         return db.dummyBatchUser as PublicUser[];
       }
    }
  };
