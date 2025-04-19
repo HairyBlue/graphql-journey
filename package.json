@@ -1,0 +1,24 @@
+{
+  "name": "graphql-journey",
+  "version": "1.0.0",
+  "author": "Hairyblue",
+  "homepage": "https://github.com/HairyBlue/graphql-journey#readme",
+  "description": "A journey to graphql",
+  "keywords": [
+    "graphql",
+    "graphql-journey",
+    "learn-graphql"
+  ],
+  "engines": {
+    "node": "20.17.0",
+    "vscode": "^1.22.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HairyBlue/graphql-journey.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HairyBlue/graphql-journey/issues"
+  }
+}
