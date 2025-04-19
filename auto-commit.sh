@@ -97,6 +97,7 @@ function commit() {
       exitf "Unable to auto commit. Do --help"
    fi
 
+    (echo "Branch: $(git rev-parse --abbrev-ref HEAD)"; git log -1 --pretty=format:"%h | %an | %ad | %s%n") >> "commit.txt"
 }
 
 if [ "$#" -eq 0 ]; then
